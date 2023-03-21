@@ -1,0 +1,22 @@
+git  创建分支并合并到主分支
+切换到基础分支，如主干
+git checkout master
+创建并切换到新分支
+git checkout -b panda
+查看是否切换到刚创建的分支
+git branch
+更新分支代码并提交 (工具提交也可以)
+git add *
+git commit -m "init panda"
+git push origin panda
+在 panda 分支首先切换到主分支 
+git checkout master
+检查下是否切换成功
+git branch 
+把panda分支合并到主分支
+git merge panda 
+
+
+
+
+
