@@ -45,3 +45,24 @@ git branch -M main
 git push -u origin main
 
 
+fatal: unable to access ‘https://github.com/…’: OpenSSL SSL_read: Connection was reset, errno 10054
+
+【产生原因】一般是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错
+
+【解决方式】解除ssl验证后，再次git即可
+
+git config --global http.sslVerify false
+
+决git下载报错：fatal: unable to access ‘https://github.com/…/.git/’:…
+
+1、在git中执行git config --global --unset http.proxy和git config --global --unset https.proxy
+
+git config --global --unset http.proxy
+
+git config --global --unset https.proxy
+
+2、在cmd下执行ipconfig/flushdns 清理DNS缓存
+
+ipconfig/flushdns
+
+
