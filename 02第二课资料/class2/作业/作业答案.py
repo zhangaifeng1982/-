@@ -30,14 +30,14 @@ def buy_stock_or_not(stock_name):
 
 # 将股票代码的形式从600000.sh改成SH600000并排序
 stock_code_list = sorted([s[-2:].upper() + s[0:6] for s in stock_code_dict.keys()])
-
+print(stock_code_list)
 for code in stock_code_list:
     # 获取股票名称
     name = stock_code_dict.get(code[-6:] + '.' + code[0:2].lower())
 
     try:  # 尝试做以下事情
         output = buy_stock_or_not(name)
-    except Exception, e:  # 如果因为各种原因报错
-        print code + ' ' + str(e)
+    except Exception as e:  # 如果因为各种原因报错
+        print (code + ' ' + str(e))
     else:  # 如果没有报错
-        print code + ' ' + str(output)
+        print (code + ' ' + str(output))
